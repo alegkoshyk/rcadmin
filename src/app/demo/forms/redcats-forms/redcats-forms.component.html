@@ -1,0 +1,47 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+  <md-card fxFlex="90%" style="padding: 0;">
+    <md-toolbar color="primary">Form Wizard</md-toolbar>
+    <md-card-content>
+      <form #form="ngForm" (submit)="saveForm()">
+        <div>
+          <md-input-container>
+            <input mdInput
+                   name="typename"
+                   placeholder="Type Name"
+                   required
+                   [(ngModel)]="typename">
+          </md-input-container>
+        </div>
+        <div>
+          <md-input-container>
+            <input mdInput
+                   name="template"
+                   placeholder="template"
+                   required
+                   [(ngModel)]="template">
+          </md-input-container>
+        </div>
+        <div>
+
+          <md-input-container>
+            <input mdInput
+                   name="additionalTextField"
+                   placeholder="additional Text Field"
+                   [(ngModel)]="additionalTextField">
+          </md-input-container>
+        </div>
+        <div>
+
+          <md-input-container>
+            <input mdInput
+                   name="additionalImageField"
+                   placeholder="additional Image Field"
+                   [(ngModel)]="additionalImageField">
+          </md-input-container>
+        </div>
+
+        <button md-raised-button type="submit">Save</button>
+      </form>
+    </md-card-content>
+  </md-card>
+</div>

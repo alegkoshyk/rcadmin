@@ -29,6 +29,7 @@ import {InboxComponent} from "./demo/apps/inbox/inbox.component";
 import {CalendarComponent} from "./demo/apps/calendar/calendar.component";
 import {ChatComponent} from "./demo/apps/chat/chat.component";
 import {AutocompleteComponent} from "./demo/components/autocomplete/autocomplete.component";
+import { RedcatsFormsComponent } from './demo/forms/redcats-forms/redcats-forms.component';
 
 const routes: Routes = [
   {
@@ -119,6 +120,11 @@ const routes: Routes = [
         path: 'forms/form-wizard',
         component: FormWizardComponent
       },
+      {
+        path: 'forms/redcats',
+        component: RedcatsFormsComponent
+      },
+
       {
         path: 'icons',
         component: IconsComponent

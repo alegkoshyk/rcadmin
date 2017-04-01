@@ -40,6 +40,7 @@ export class SidenavService {
     let forms = menu.addItem('Forms', 'insert_comment', null, 4);
     menu.addSubItem(forms, 'Form Elements', '/forms/form-elements', 1);
     menu.addSubItem(forms, 'Form Wizard', '/forms/form-wizard', 1);
+    menu.addSubItem(forms, 'Redcats', '/forms/redcats', 2);
 
     let tables =  menu.addItem('Tables', 'format_line_spacing', null, 5);
     menu.addSubItem(tables, 'Simple Table', '/tables/simple-table', 1);

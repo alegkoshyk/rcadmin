@@ -62,6 +62,7 @@ import {SortablejsModule, SortablejsOptions} from "angular-sortablejs";
 import { DragAndDropComponent } from './demo/drag-and-drop/drag-and-drop.component';
 import { InboxComponent } from './demo/apps/inbox/inbox.component';
 import { MailService } from "./demo/apps/inbox/mail.service";
+import { AdminService } from "./demo/forms/redcats-forms/admin.service";
 import { InboxComposeComponent } from './demo/apps/inbox/inbox-compose/inbox-compose.component';
 import {CalendarModule} from "angular-calendar";
 import { CalendarComponent } from './demo/apps/calendar/calendar.component';
@@ -69,6 +70,7 @@ import { CalendarEditComponent } from './demo/apps/calendar/calendar-edit/calend
 import { ChatComponent } from './demo/apps/chat/chat.component';
 import {CommonModule} from "@angular/common";
 import { AutocompleteComponent } from './demo/components/autocomplete/autocomplete.component';
+import { RedcatsFormsComponent } from './demo/forms/redcats-forms/redcats-forms.component';
 
 const perfectScrollbarConfig: PerfectScrollbarConfigInterface = {
   suppressScrollX: true
@@ -130,7 +132,8 @@ const sortablejsConfig: SortablejsOptions = {
     CalendarComponent,
     CalendarEditComponent,
     ChatComponent,
-    AutocompleteComponent
+    AutocompleteComponent,
+    RedcatsFormsComponent
   ],
   entryComponents: [
     DemoDialog,
@@ -160,7 +163,8 @@ const sortablejsConfig: SortablejsOptions = {
     BreadcrumbService,
     DynamicMenuService,
     D3ChartService,
-    MailService
+    MailService,
+    AdminService
   ],
   bootstrap: [AppComponent]
 })
