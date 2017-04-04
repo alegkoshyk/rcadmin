@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>info from database</title>
+</head>
+<body style="background-color: darkgray">
+
+{% include 'admenu.html.twig' %}
+
+<form action="#" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+
+    <input type="submit" name="{{ btn_name }}" />
+</form>
+
+<table>
+    <tr>
+        {% for item in dbheaders %}
+            <td>{{ item.COLUMN_NAME }}</td>
+        {% endfor %}
+        <td>change data</td>
+    </tr>
+{% for row in  dbout %}
+    <tr>
+        {% for item in row %}
+            <td>{{ item }}</td>
+        {% endfor %}
+        <td><a href = {{ row.page_url }}> modify page {{ row.page_url }}</a></td>
+    </tr>
+{% endfor %}
+</table>
+</body>
+</html>

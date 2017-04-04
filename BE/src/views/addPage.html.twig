@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>info from database</title>
+</head>
+<body style="background-color: darkgray">
+
+{% include 'admenu.html.twig' %}
+<table class="newPageData">
+<form action="#" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+    <input type="submit" name="{{ btn_name }}" />
+</form>
+</table>
+
+<table class="oldPageData">
+    {% for key, item in dbOutOld %}
+            <tr>
+                <td>{{ key }}</td> <td>{{ item }}</td>
+            </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
