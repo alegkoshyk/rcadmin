@@ -3,7 +3,7 @@ import {Http} from "@angular/http";
 import {Observable} from "rxjs";
 import {typeDTO}from '../../../common/class/type-dto.class'
 
-const typePath = 'http://localhost:80/rcadmin/web/index.php/pages/api/types';
+const typePath = 'http://localhost:80/rcadmin/BE/index.php/pages/api/types';
 const mockedTypesJson = `[
     {
       "type_id":"10",
@@ -34,10 +34,12 @@ export class AdminService {
   }
 
   public getTypes(): Observable<typeDTO[]> {
-    const types = JSON.parse(mockedTypesJson)
-      .map(type => new typeDTO(type));
-
-    return Observable.of(types);
+    //const types = JSON.parse(mockedTypesJson)
+    //  .map(type => new typeDTO(type));
+    //
+    //return Observable.of(types);
+    return this.http.get(typePath)
+        .map(data => data.json());
   }
 
   public updateType(id: string, type: typeDTO) {

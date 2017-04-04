@@ -18,10 +18,7 @@ export class RedcatsFormsComponent implements OnInit {
   constructor(private adminService: AdminService) {}
 
   ngOnInit() {
-    this.adminService.getTypes()
-      .subscribe((types) => {
-        this.types = types
-      })
+    this.fetchTypes();
   }
 
   public saveForm() {
@@ -65,6 +62,8 @@ export class RedcatsFormsComponent implements OnInit {
     const postForm =  this.adminService.createType(formData).subscribe(
       () => {
         postForm.unsubscribe();
+        this.resetForm();
+        this.fetchTypes();
       },
       (error) => {
         console.log(error);
@@ -78,11 +77,19 @@ export class RedcatsFormsComponent implements OnInit {
         () => {
           console.log(`update type id: ${this.updatingType.type_id}`);
           putSub.unsubscribe();
+          this.resetForm();
+          this.fetchTypes();
         },
         (error) => {
           console.error("something goes wrong");
           console.error(error);
-        },
+        }
         );
+  }
+  private fetchTypes() {
+    this.adminService.getTypes()
+        .subscribe((types) => {
+          this.types = types
+        })
   }
 }
