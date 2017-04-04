@@ -2,8 +2,35 @@
   <md-card fxFlex="90%" style="padding: 0;">
     <md-toolbar color="primary">Form Wizard</md-toolbar>
     <md-card-content>
-      <form #form="ngForm" (submit)="saveForm()">
+      <h3>
+        Types:
+        <button md-icon-button
+          (click)="createType()">
+          <md-icon>add</md-icon>
+        </button>
+      </h3>
+      <md-list *ngIf="!(isCreate || updatingType)">
+      <md-list-item *ngFor="let type of types">
+        <div md-line>
+          <span md-list-avatar> <i class="material-icons">class</i></span>
+          <span>{{type.type_name}} </span>
+          <button md-icon-button
+            (click)="editType(type)">
+            <md-icon>edit</md-icon>
+          </button>
+        </div>
+      </md-list-item>
+      </md-list>
+
+      <hr>
+
+      <form *ngIf="isCreate || updatingType" #form="ngForm"
+            (submit)="saveForm()"
+            (reset)="resetForm()">
         <div>
+          <div>
+            <button md-icon-button (click)="resetForm()"><md-icon>back</md-icon></button>
+          </div>
           <md-input-container>
             <input mdInput
                    name="typename"
@@ -41,6 +68,7 @@
         </div>
 
         <button md-raised-button type="submit">Save</button>
+        <button md-raised-button type="reset">Cancel</button>
       </form>
     </md-card-content>
   </md-card>
